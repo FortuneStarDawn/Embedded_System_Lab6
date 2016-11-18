@@ -72,7 +72,7 @@ void TimerA_UART_tx(unsigned char byte)
 	TA0CCR0 += UART_TBIT; // One bit time till 1st bit
 	TA0CCTL0 = OUTMOD0 + CCIE; // Set TXD on EQU0, Int
 	txData = byte;       // Load global variable
-	for(i=0; i<8; i++)
+	for(i=0; i<7; i++)
 	{
 		parity ^= (byte & 0x01);
 		byte >>= 1;
